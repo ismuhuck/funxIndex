@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>funx</title>
+  <link rel="stylesheet" type="text/css" href="./css/fullpage.css">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="./css/mobie.css" />
+  <style>
+   
+  </style>
+</head>
+<body>
+  <div class="menu" id="menu">
+    <a class="active" href="#home"></a>
+    <a href="#about"></a>
+    <a href="#contact"></a>
+  </div>
+  <a class="head-logo" href="#home"></a>
+  <div class="topNav">
+    <div class="wrap">
+      <a href="#home" class="active">首页</a>
+      <a href="#about">关于我们</a>
+      <a href="#contact">联系我们</a>
+    </div>
+  </div>
+  <div class="wrap" id="fullpage">
+    <div class="section" >
+      <div class="home-wrap">
+        <canvas class="home-canvas" id="canvas"></canvas>
+        <div class="banner-wrap">
+          <img class="banner" src="./images/banner.png" />
+        </div>
+        <div class="btn-wrap">
+          <a class="ios">
+            <div class="tip">
+              <div class="download">立即下载</div>
+              <div class="phone-type">iOS</div>
+            </div>
+            <div class="phone-logo"></div>
+          </a>
+          <a class="android">
+            <div class="tip">
+              <div class="download">立即下载</div>
+              <div class="phone-type">Android</div>
+            </div>
+            <div class="phone-logo"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- 关于我们 -->
+    <div class="section" >
+        <div class="us_box">
+            <div class="myfriend">
+              <div class="friend_left">
+                <img src="./images/myfriend.png" alt="" class="img_friend">
+                <div class="us_content">
+                  Funx是一款以玩家为核心，以俱乐部为载体的分众社交软件。
+                  只为热爱生活的你，提供专业的俱乐部资讯、活动信息、兴趣交友、自我展示的平台。
+                  阅尽繁华，看到更好的自己。纵横四海，找到心里的家。跟我来，让全世界玩家联合起来。
+                </div>
+              </div>
+              <div class="iphoneX">
+                <img src="./images/iPhone-X.png" alt="" class="img_iphone">
+              </div>
+            </div>
+          </div>
+    </div>
+    <!-- 联系我们 -->
+    <div class="section" >
+        <div class="content_box">
+            <div class="connect_title">
+              <div class="title_img"><img src="./images/CONTACt.png" alt=""></div> 
+            </div>
+            <div class="map_box">
+              <img src="./images/map.png" alt="" class="img_map">
+            </div>
+    
+            <div class="connect_footer">
+    
+              <div class="footer_info">
+                <h3>吉林省厚普互联网科技有限公司</h5>
+                  <div class="connect_methods">联系方式：</div>
+                  <div class="email_box">
+                    <span class="email_title">官方邮箱：</span>
+                    <span class="email_content">info@hopernet.com</span></div>
+                  <p class="address">地址：金城街488号</p>
+                  <p class="phone">电话：0431-80541714</p>
+              </div>
+    
+              <div class="code_box">
+                <div class="qq"><img src="./images/1575682779.png" alt="" class="qq_img">
+                  <div class="qq_title">官方QQ</div>
+                </div>
+                <div class="weixin"><img src="./images/1575682779.png" alt="" class="weixin_img">
+                  <div class="weixin_title">官方微信</div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+  <div class="footer-right">
+    <span>FunX 2011-2019 © All Rights Reserved.</span>
+  </div>
+
+<script>
+  var ua = navigator.userAgent;
+  // var slide
+  window.isIpad = ua.match(/(iPad).*OS\s([\d_]+)/)
+  window.isIphone =!window.isIpad && ua.match(/(iPhone\sOS)\s([\d_]+)/)
+  window.isAndroid = ua.match(/(Android)\s+([\d.]+)/)
+  window.isMobile = isIphone || isAndroid
+  // if (isAndroid) {
+  //   alert('你是傻逼')
+  // }
+
+</script>
+<script src="./js/canvas.js"></script>
+<script src="./js/jquery-1.8.3.min.js"></script>
+<script src="./js/jquery.fullPage.js"></script>
+<script>
+var hander
+
+if(window.isMobile){
+  // 手机端
+  $('.topNav').click(function () {
+    $('.topNav .wrap').toggle()
+  })
+
+
+  $('.img_map').attr('src', './images/phone_map.png')
+  $('.title_box').remove()
+  $('.banner-wrap img').attr('src', './images/banner_phone.png')
+  $('.img_friend').remove()
+  $('.iphoneX').remove()
+  var img = $('<img src="./images/zuhe.png" class="zuhe"/>')
+  $('.us_content').before(img)
+}else{
+  $('.img_map').attr('src', './images/map.png')
+  
+}
+$(function() {
+  $('#fullpage').fullpage({
+    menu: true,
+    anchors: ['home', 'about', 'contact'],
+    lockAnchors:true,
+    afterLoad: function (name, index) {
+      $($('#menu a')[index - 1]).addClass('active').siblings().removeClass('active')
+      $($('.topNav a')[index - 1]).addClass('active').siblings().removeClass('active')
+    }
+  })
+})
+</script>
+</body>
+</html>

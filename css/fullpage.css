@@ -1,0 +1,72 @@
+/* 定位样式 */
+body{
+  margin: 0;
+  padding: 0;
+}
+.menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  z-index: 999;
+  text-align: center;
+}
+.menu a {
+  display: block;
+  margin-top: 10px;
+  width: 6px;
+  height: 6px;
+  background: #656565;
+  border-radius: 3px;
+  cursor: pointer;
+  opacity: .4;
+  filter: alpha(opacity=40);
+}
+.menu a.active{
+  background: red;
+  width: 10px;
+  height: 10px;
+  background: #545454;
+  border-radius: 5px;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.head-logo{
+  display: block;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 175px;
+  height: 83px;
+  background-image: url('../images/logo.png');
+  background-size: 100% 100%;
+  z-index: 999;
+  cursor: pointer;
+}
+.topNav{
+  position: fixed;
+  top: 20px;
+  right: 35px;
+  z-index: 99;
+}
+.topNav a{
+  margin-right: 3.055556rem;
+  font-size: 18px;
+  /* font-weight: bold; */
+  text-decoration: none;
+  cursor: pointer;
+  color: #b7b7b7;
+}
+.topNav a.active{
+  color: #585858;
+}
+.footer-right{
+  font-size: 12px;
+  color: #000;
+  position: fixed;
+  right: 70px;
+  bottom: 80px;
+}

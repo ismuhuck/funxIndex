@@ -1,0 +1,231 @@
+a {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	-webkit-user-select: none;
+	-moz-user-focus: none;
+  -moz-user-select: none;
+}
+body{
+  min-width: 350px;
+}
+html{
+  font-size: 11px;
+}
+
+.logo{
+  top: 19px;
+  left: 5px;
+}
+.right{
+  text-align: center;
+}
+.right span {
+  padding-right: 0;
+}
+.footer a{
+  margin-top: 10px;
+  display: inline-block;
+  width: 158px;
+  padding: 20px 0 0 30px;
+  height: 50px;
+  /* padding: 14px ; */
+  color: #fff;
+}
+.home-wrap .btn-wrap{
+  bottom: 11.111111rem;
+}
+.home-wrap .banner-wrap{
+  top: 180px;
+}
+
+
+.footer a.ios_a{
+  margin-left: 5px;
+  /* margin-right: 0; */
+}
+.footer a.android_a{
+  margin-right: 5px;
+}
+.footer a .tips{
+  display: inline-block;
+  margin: 0;
+}
+.footer a .tips .phone-type{
+  color: rgb(185,185,185);
+  opacity: 0.6;
+}
+.footer a .icon{
+  display: inline-block;
+}
+#cas{
+  width: 250px;
+  height: 120px;
+  top:-430px;
+}
+.banner img{
+  width: 250px;
+  height: 136px;
+}
+
+.footer-right{
+  bottom: 15px;
+}
+
+
+/* 手机菜单样式 */
+.topNav{
+  width: 20px;
+  height: 20px;
+  background-image: url('../images/menu.png');
+  background-size: 100% 100%;
+}
+.topNav .wrap a{
+  display: block;
+  margin-right: 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 12px;
+  padding: 5px 0;
+  color: #fff;
+}
+.topNav .wrap{
+  display: none;
+  background: #666;
+  position: absolute;
+  top: 25px;
+  right: 0px;
+  width: 100px;
+  z-index: 9999;
+}
+
+
+/* 关于我们 */
+.us_box {
+  width: 100%;
+  padding-top: 0px;
+}
+
+.myfriend {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+}
+.myfriend .friend_left{
+  width: 100%;
+}
+.myfriend .friend_left .img_friend{
+  width: 70%;
+  margin-top: 0;
+  height: 70%;
+}
+
+.myfriend .friend_left .us_content{
+  width: 70%;
+  font-size: 12px;
+  line-height: normal;
+  margin: 0 auto;
+  /* padding: 0 auto; */
+  height: 100%;
+  margin-bottom: 10px;
+}
+.iphoneX {
+  width: 100%;
+  text-align: center;
+}
+
+.iphoneX img {
+  width: 70%;
+  height: 70%;
+}
+
+.myfriend .friend_left img.zuhe{
+  width: 70%;
+  margin-top: 0px;
+  height: 70%;
+}
+
+/* 联系我们 */
+*{
+  margin: 0;
+  padding: 0;
+}
+.content_box {
+  width: 100%;
+  padding: 0;
+  padding-top: 30px;
+}
+
+.connect_title {
+  width: 100%;
+  text-align: center;
+}
+.connect_title .title_img{
+  width: 250px;
+}
+.connect_title img{
+  width: 70%;
+  height: 70%;
+  margin-bottom: 0;
+}
+
+.map_box {
+  width: 100%;
+}
+
+.map_box img {
+  width: 80%;
+  height: 80%;
+}
+.connect_footer{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.connect_footer .footer_info{
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  text-align: left;
+  width: 80%;
+  /* padding-left: 20px; */
+}
+.connect_footer .footer_info h3{
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+.connect_footer .footer_info .email_box{
+  margin-bottom: 5px;
+}
+.connect_footer .footer_info .address{
+  margin-bottom: 5px;
+}
+.connect_footer .footer_info .connect_methods{
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.connect_footer .code_box{
+  width: 80%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0 20px; */
+}
+.connect_footer .code_box .qq,.connect_footer .code_box .weixin{
+  width: 80px;
+}
+.connect_footer .code_box img{
+  width: 80px;
+  height: 80px;
+}
+
+.section{
+  padding-top: 30px;
+}
+.head-logo{
+  top: 10px;
+  left: 10px;
+  width: 100px;
+  height: 47.43px;
+}
