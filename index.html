@@ -5,68 +5,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>funx</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+   @media screen and (max-width: 1920px) {
+      html{
+        font-size: 18px;
+      }
+    }
+    @media screen and (max-width: 1600px) {
+      html{
+        font-size: 12px;
+      }
+      .about-text{
+        line-height: 30px;
+        font-size: 14px;
+      }
+    }
+    
+  </style>
   <link rel="stylesheet" type="text/css" href="./css/fullpage.css">
   <link rel="stylesheet" type="text/css" href="./css/main.css">
   <link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="./css/mobie.css" />
-  <style>
-   
-  </style>
 </head>
 <body>
-  <div class="menu" id="menu">
-    <a class="active" href="#home"></a>
-    <a href="#about"></a>
-    <a href="#contact"></a>
+  <div class="right-nav">
+    <a href="#home" class="active">
+      <div></div>
+    </a>
+    <a href="#about">
+      <div></div>
+    </a>
+    <a href="#contact">
+      <div></div>
+    </a>
   </div>
   <a class="head-logo" href="#home"></a>
   <div class="topNav">
     <div class="wrap">
       <a href="#home" class="active">首页</a>
       <a href="#about">关于我们</a>
-      <a href="#contact">联系我们</a>
+      <a class="last" href="#contact">联系我们</a>
     </div>
   </div>
   <div class="wrap" id="fullpage">
     <div class="section" >
-      <div class="home-wrap">
+      <div class="home">
         <canvas class="home-canvas" id="canvas"></canvas>
-        <div class="banner-wrap">
+        <div class="home-container">
           <img class="banner" src="./images/banner.png" />
-        </div>
-        <div class="btn-wrap">
-          <a class="ios">
-            <div class="tip">
-              <div class="download">立即下载</div>
-              <div class="phone-type">iOS</div>
-            </div>
-            <div class="phone-logo"></div>
-          </a>
-          <a class="android">
-            <div class="tip">
-              <div class="download">立即下载</div>
-              <div class="phone-type">Android</div>
-            </div>
-            <div class="phone-logo"></div>
-          </a>
+          <div class="download">
+            <a class="ios">
+              <div class="left">
+                <div class="tips">立即下载</div>
+                <div class="phone-type">iOS</div>
+              </div>
+              <div class="right">
+                <div class="phone-logo iphone-logo"></div>
+              </div>
+            </a>
+            <a class="android">
+                <div class="left">
+                  <div class="tips">立即下载</div>
+                  <div class="phone-type">Android</div>
+                </div>
+                <div class="right">
+                  <div class="phone-logo android-logo"></div>
+                </div>
+              </a>
+          </div>
         </div>
       </div>
     </div>
     <!-- 关于我们 -->
     <div class="section" >
         <div class="us_box">
-            <div class="myfriend">
-              <div class="friend_left">
+              <div class="about-left">
                 <img src="./images/myfriend.png" alt="" class="img_friend">
-                <div class="us_content">
+                <div class="about-text">
                   Funx是一款以玩家为核心，以俱乐部为载体的分众社交软件。
                   只为热爱生活的你，提供专业的俱乐部资讯、活动信息、兴趣交友、自我展示的平台。
                   阅尽繁华，看到更好的自己。纵横四海，找到心里的家。跟我来，让全世界玩家联合起来。
                 </div>
               </div>
-              <div class="iphoneX">
+              <div class="about-right">
                 <img src="./images/iPhone-X.png" alt="" class="img_iphone">
               </div>
-            </div>
           </div>
     </div>
     <!-- 联系我们 -->
@@ -78,9 +101,7 @@
             <div class="map_box">
               <img src="./images/map.png" alt="" class="img_map">
             </div>
-    
             <div class="connect_footer">
-    
               <div class="footer_info">
                 <h3>吉林省厚普互联网科技有限公司</h5>
                   <div class="connect_methods">联系方式：</div>
@@ -108,52 +129,67 @@
   </div>
 
 <script>
+
+  
   var ua = navigator.userAgent;
   // var slide
   window.isIpad = ua.match(/(iPad).*OS\s([\d_]+)/)
   window.isIphone =!window.isIpad && ua.match(/(iPhone\sOS)\s([\d_]+)/)
   window.isAndroid = ua.match(/(Android)\s+([\d.]+)/)
   window.isMobile = isIphone || isAndroid
-  // if (isAndroid) {
-  //   alert('你是傻逼')
-  // }
+  // var canvas = document.getElementById('canvas')
+  // window.onresize = function () {
+  //     canvas.width = window.innerWidth
+  //   canvas.height = window.innerHeight
+  //   }
+
 
 </script>
 <script src="./js/canvas.js"></script>
 <script src="./js/jquery-1.8.3.min.js"></script>
+<!-- <script src="./js/zoom.js"></script> -->
 <script src="./js/jquery.fullPage.js"></script>
 <script>
-var hander
-
+var pages = ['funx-首页', 'funx-关于我们', 'funx-联系我们']
+var handers
 if(window.isMobile){
   // 手机端
   $('.topNav').click(function () {
-    $('.topNav .wrap').toggle()
+    $('.topNav .wrap').toggle(150)
   })
 
-
+  hander = function (index) {
+    $('title').text(pages[index - 1])
+    $('.topNav .wrap').hide()
+  }
   $('.img_map').attr('src', './images/phone_map.png')
   $('.title_box').remove()
   $('.banner-wrap img').attr('src', './images/banner_phone.png')
   $('.img_friend').remove()
-  $('.iphoneX').remove()
+  $('.about-right').remove()
+  $('.banner').attr('src','./images/banner_phone.png')
   var img = $('<img src="./images/zuhe.png" class="zuhe"/>')
-  $('.us_content').before(img)
+  $('.about-text').before(img)
 }else{
   $('.img_map').attr('src', './images/map.png')
-  
 }
 $(function() {
   $('#fullpage').fullpage({
     menu: true,
     anchors: ['home', 'about', 'contact'],
     lockAnchors:true,
+    // loopTop: true,
+    // loopBottom: true,
+    touchSensitivity : 2,//在移动端的触碰敏感性
+    recordHistory: false,
     afterLoad: function (name, index) {
-      $($('#menu a')[index - 1]).addClass('active').siblings().removeClass('active')
+      isMobile ? hander(index) : null
+      $($('.right-nav a')[index - 1]).addClass('active').siblings().removeClass('active')
       $($('.topNav a')[index - 1]).addClass('active').siblings().removeClass('active')
     }
   })
 })
 </script>
+
 </body>
 </html>

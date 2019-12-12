@@ -3,260 +3,141 @@ html{
   background: #fff;
   font-size: 16px;
 }
-::selection{
-  background-color: pink;
-}
-
-body{
-  min-width: 1600px;
-}
-/* .section{
-  padding-top: 100px;
-} */
-
-/*********************** 首页样式 *****************************/
-.home-wrap{
-  position: relative;
-  padding-top: 100px;
-  box-sizing: border-box;
-  height: 100%;
-}
-.home-wrap .banner-wrap{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
-  width: 100%;
-}
-.home-wrap .banner-wrap img{
-  width: 85%;
-}
-.home-wrap .home-canvas{
-  position: absolute;
-  top: -150px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -99;
-}
-
-.home-wrap .btn-wrap{
-  position: absolute;
-  bottom: 10.777778rem;
-  width: 100%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-}
-.home-wrap .btn-wrap a{
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 30px;
-  width: 14.444444rem;
-  height: 4.944444rem;
-  background: #F2F2F2;
-  border-radius: 2.472222rem;
-  -webkit-cursor: pointer;
-  cursor: pointer;
-  -webkit-user-select: none;
+a {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	-webkit-user-select: none;
+	-moz-user-focus: none;
   -moz-user-select: none;
-  user-select: none;
-  -moz-transition: .5s;
-  -webkit-transition: .5s;
-  -o-transition: .5s;
-  transition: .5s;
-  color: #717171;
 }
-.home-wrap .btn-wrap .ios{
-  margin-right: 1.111111rem;
+a, a:active, a:link, a:visited, a:target {
+  text-decoration: none;
 }
-.home-wrap .btn-wrap .phone-logo{
-  width: 2.555556rem;
-  height: 2.555556rem;
-}
-.home-wrap .btn-wrap .ios .phone-logo {
-  background-image: url('../images/ios.png');
-  background-size: 100% 100%;
-}
-.home-wrap .btn-wrap .android .phone-logo {
-  background-image: url('../images/android.png');
-  background-size: 100% 100%;
-}
-.home-wrap .btn-wrap .phone-type{
-  color: #bfbfbf;
-  text-align: left;
-  font-size: .888889rem;
-}
-.home-wrap .btn-wrap .download{
-  font-size: 1rem;
-}
-.home-wrap .btn-wrap a:hover{
-  background-color: #e5e5e5;
-  /* color: #fff; */
-}
-
-
-/* 关于我们 */
-
-
-.us_box {
-  width: 1440px;
-  margin: 0 auto;
-  position: relative;
-  height: 100%;
-  padding-top: 100px;
-}
-
-.myfriend{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-.myfriend .friend_left img{
-  width: 580px;
-  height: 330px;
-  margin-top: 100px;
-}
-.myfriend .friend_left .us_content{
-  width: 520px;
-  height: 200px;
-  font-size: 16px;
-  line-height: 40px;
-  color: rgba(159,159,159,1);
-  margin-left: 100px;
-  text-align: left;
-}
-.iphoneX img{
-  width: 840px;
-  height: 890px;
-}
-
-html{
-  font-size: 18px;
-  position: relative;
+::selection{
+  background-color: orange;
+  color: #fff;
 }
 
 body{
   margin: 0;
   padding: 0;
-  width: 100%;
-  text-align: center;
+  /* min-width: 1600px; */
 }
-.banner{
-  /* margin-top: 4.722222rem; */
-  width: 100%;
-  text-align: center;
-}
-.banner img{
-  width: 36.7%;
-  z-index: 889;
-  position: relative;
-}
-.say{
-  position: relative;
-  margin: 3.611111rem auto;
-  width: 71.7%;
-  height: 13%;
-}
-.say img {
-  width: 100%;
+/* .section{
+  padding-top: 100px;
+} */
+.right-nav { position: absolute; right: 48px; top: 50%; transform: translateY(-50%); z-index: 666; }
+.right-nav a { position: relative; margin-bottom: 14px; display: block; width: 10px; height: 10px; background: transparent; border-radius: 5px; }
+.right-nav a > div { position: absolute; left: 2px; top: 2px; width: 6px; height: 6px; border-radius: 3px; background-color: #656565; z-index: -99;}
+.right-nav a.active { background-color: #545454; }
+
+/*********************** 首页样式 *****************************/
+.home { position: relative; width: 100%; height: 100%; }
+.home .home-container { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; text-align: center; }
+.home-canvas{position: absolute; top: -150px;left: 50%;transform: translateX(-50%);}
+.home .home-container .banner { width: 85%; }
+.home .home-container .download { margin-top: 1.25rem; width: 100%; text-align: center; white-space: nowrap; }
+.home .home-container .download a { display: inline-block; position: relative; padding: 0px 3.5rem; width: 12.875rem; height: 5.5625rem; border-radius: 2.781rem; background-color: #F2F2F2; -webkit-transition: .6s; transition: .6s;cursor: pointer; }
+.home .home-container .download .ios { margin-right: 1.25rem; }
+.home .home-container .download .left, .home .home-container .download .right { position: absolute; top: 0; width: 50%; height: 100%; }
+.home .home-container .download .left { left: 0; padding-left: 3.5rem /* 56/16 */; }
+.home .home-container .download .left { padding-top: 1.4375rem /* 23/16 */ /* 15/16 */; text-align: left; }
+.home .home-container .download .right { position: relative; left: 50%; padding-right: 3.5rem /* 56/16*/; padding-top: 1.4375rem ; box-sizing: border-box; vertical-align: center; }
+.home .home-container .download .right div { position: absolute; right: 0; width: 2.875rem; height: 2.875rem; background-size: 100% 100%; transition: .6s; }
+/* .home .home-container .download .right .phone-logo { width: 2.875rem; height: 2.875rem; background-size: 100% 100%; transition: .6s; height: 100%; } */
+.home .home-container .download .iphone-logo { background-image: url('../images/ios.png'); }
+.home .home-container .download .android-logo { background-image: url('../images/android.png'); }
+.home .home-container .download .tips { font-size: 1.125rem; color: #717171; -webkit-transition: color .6s; transition: color .6s; }
+.home .home-container .download .phone-type { font-size: 1rem; color: #b5b5b5; text-align: left; -webkit-transition: color .6s; transition: color .6s; }
+.home .home-container .download a:hover { background: orange; }
+.home .home-container .download a:hover .tips { color: #fff; }
+.home .home-container .download a:hover .phone-type { color: #eee; }
+.home .home-container .download a:hover .iphone-logo { background-image: url('../images/ios_hover.png'); }
+.home .home-container .download a:hover .android-logo { background-image: url('../images/android_hover.png'); }
+
+
+/* 关于我们 */
+.us_box{
+  box-sizing: border-box;
+  width: 80%;
   height: 100%;
+  margin: 0 auto;
+  padding-top: 3%;
 }
-.say .detail{
-  position: absolute;
-  left: 35%;
-  top: -10%;
-  width: 26.35%;
+.us_box::after{
+  content: '';
+  display: block;
+  clear: both;
 }
-.footer{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 8.833333rem;
-}
-.footer a{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-right: 1.111111rem;
-  width: 14.444444rem;
-  height: 4.944444rem;
-  background-color: #F2F2F2;
-  border-radius: 2.472222rem;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-.footer .tips {
-  margin-left: 3.055556rem;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  font-size: 1rem;
-  color: #717171;
-  /* font-weight: bold; */
-}
-.footer .tips .phone-type{
-  font-size: .888889rem;
-}
-.footer .icon{
-  margin-right: 3.111111rem;
-}
-.footer .icon img{
-  width: 2.111111rem;
-  height: 2.222222rem;
-}
-.right{
-  position: absolute;
-  width: 100%;
-  bottom: 4.444444rem;
+.about-left{
+  width: 40%;
+  float: left;
+  height: 70%;
   text-align: right;
-  font-size: .666667rem;
+  padding-top: 8%;
+  margin-left: 5%;
+  /* margin-right: 5%; */
 }
-.right span{
-  padding-right: 3.888889rem;
+.img_friend{
+  width: 100%;
+  /* height: 50%; */
+}
+.img_iphone{
+  width: 100%;
+  /* height: 100%; */
+}
+.about-right{
+  width: 55%;
+  float: left;
+  /* height: 100%; */
+  text-align: left;
+}
+.about-text{
+  width: 100%;
+  text-align: left;
+  margin-left: 7%;
+  line-height: 250%;
+  color: rgba(159,159,159,1);
+  font-size: 16px;
 }
 
 
 /* 联系我们 */
 
 .content_box {
-  width: 1380px;
+  width: 80%;
   margin: 0 auto;
-  padding-top:80px;
+  padding-top: 4%;
 }
 .connect_title{
+  width: 100%;
   text-align: left;
+  /* margin-top: 15%; */
 }
 .connect_title img {
-  width: 460px;
-  height: 140px;
-  margin-bottom: 20px;
-
+  width: 30%;
 }
 
 .map_box {
   position: relative;
-
+  width: 100%;
 }
 
 .map_box img {
-  width: 1380px;
-  height: 390px;
+  width: 100%;
 }
 .connect_footer{
   margin-top: 20x;
-  display: flex;
-  justify-content: space-between;
-  align-items:  center ;
+}
+.connect_footer::after{
+  content: '';
+  display: block;
+  clear: both;
 }
 .connect_footer .code_box{
-  display: flex;
+  float: right;
+  margin-top: 5%;
 }
-.connect_footer .code_box .qq{
-  margin-right: 20px;
-}
+
 .connect_footer .footer_info h3{
   font-size: 22px;
   color: black;
@@ -267,6 +148,7 @@ body{
   text-align: left;
   font-size: 16px;
   color: rgb(159,159,159);
+  float: left;
 }
 
 .footer_info .email_box{
@@ -282,9 +164,12 @@ body{
 }
 .code_box .qq{
   width: 100px;
+  margin-right: 20px;
+  float: left;
 }
 .code_box .weixin{
   width: 100px;
+  float: left;
 }
 .code_box .qq_img {
   width: 100px;
@@ -296,25 +181,12 @@ body{
 }
 .qq_title{
   font-size: 16px;
+  text-align: center;
 }
 .weixin_title{
   font-size: 16px;
+  text-align: center;
 }
 
-.container{
-  position: relative;
-}
-#cas {
-  position: absolute;
-  left:0;
-  top:-412px;
-  bottom:0;
-  right:0;
-  margin:auto;
-  width:36.7%;
-  height:380px;
-  background-color: white;
-  z-index: 0;
-  opacity: 1;
-}
+
 

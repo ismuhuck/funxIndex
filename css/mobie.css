@@ -1,15 +1,14 @@
-a {
-	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-	-webkit-user-select: none;
-	-moz-user-focus: none;
-  -moz-user-select: none;
-}
+
 body{
   min-width: 350px;
 }
 html{
-  font-size: 11px;
+  font-size: 10px;
 }
+
+.home .home-container .download a { align-items: center; padding: 0px 2.1rem; width: 10.2rem; height: 5.5625rem; border-radius: 2.781rem; background-color: #F2F2F2; -webkit-transition: .6s; transition: .6s; }
+.home .home-container .download .ios { margin-right: 0.89rem; }
+
 
 .logo{
   top: 19px;
@@ -30,12 +29,13 @@ html{
   /* padding: 14px ; */
   color: #fff;
 }
+/* 
 .home-wrap .btn-wrap{
   bottom: 11.111111rem;
 }
 .home-wrap .banner-wrap{
   top: 180px;
-}
+} */
 
 
 .footer a.ios_a{
@@ -56,15 +56,6 @@ html{
 .footer a .icon{
   display: inline-block;
 }
-#cas{
-  width: 250px;
-  height: 120px;
-  top:-430px;
-}
-.banner img{
-  width: 250px;
-  height: 136px;
-}
 
 .footer-right{
   bottom: 15px;
@@ -73,75 +64,54 @@ html{
 
 /* 手机菜单样式 */
 .topNav{
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background-image: url('../images/menu.png');
   background-size: 100% 100%;
 }
 .topNav .wrap a{
+  margin-top: 2px;
+  padding: 8px 0px;
+  padding-left: 6px;
   display: block;
   margin-right: 0;
-  border-bottom: 1px solid #ccc;
   font-size: 12px;
-  padding: 5px 0;
+  background-color: orange;
+  border-radius: 5px;
   color: #fff;
 }
 .topNav .wrap{
   display: none;
-  background: #666;
+  background: transparent;
   position: absolute;
-  top: 25px;
+  top: 35px;
   right: 0px;
   width: 100px;
   z-index: 9999;
+  border-radius: 5px;
 }
 
 
 /* 关于我们 */
-.us_box {
-  width: 100%;
-  padding-top: 0px;
-}
 
-.myfriend {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 30px;
-  text-align: center;
-}
-.myfriend .friend_left{
-  width: 100%;
-}
-.myfriend .friend_left .img_friend{
+.us_box{
   width: 70%;
-  margin-top: 0;
-  height: 70%;
-}
-
-.myfriend .friend_left .us_content{
-  width: 70%;
-  font-size: 12px;
-  line-height: normal;
   margin: 0 auto;
-  /* padding: 0 auto; */
-  height: 100%;
-  margin-bottom: 10px;
 }
-.iphoneX {
+.about-left{
+  float: none;
   width: 100%;
-  text-align: center;
+  margin: 0;
+  padding: 0;
 }
-
-.iphoneX img {
-  width: 70%;
-  height: 70%;
+.zuhe{
+  width: 100%;
 }
-
-.myfriend .friend_left img.zuhe{
-  width: 70%;
-  margin-top: 0px;
-  height: 70%;
+.about-text{
+  font-size: 14px;
+  line-height: 100%;
+  /* margin-left: %; */
+  width: 90%;
 }
 
 /* 联系我们 */
@@ -170,6 +140,7 @@ html{
 
 .map_box {
   width: 100%;
+  text-align: center;
 }
 
 .map_box img {
@@ -177,9 +148,9 @@ html{
   height: 80%;
 }
 .connect_footer{
+  width: 100%;
   margin: 0;
-  display: flex;
-  flex-direction: column;
+  /* text-align: center; */
 }
 .connect_footer .footer_info{
   margin: 0;
@@ -187,6 +158,8 @@ html{
   font-size: 12px;
   text-align: left;
   width: 80%;
+  float: none;
+  margin: 0 auto;
   /* padding-left: 20px; */
 }
 .connect_footer .footer_info h3{
@@ -207,12 +180,23 @@ html{
 }
 .connect_footer .code_box{
   width: 80%;
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  /* padding: 0 20px; */
+  margin-top: 10%;
+  float: none;
+  margin: 0 auto;
+
 }
-.connect_footer .code_box .qq,.connect_footer .code_box .weixin{
+.code_box::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.connect_footer .code_box .weixin{
+  width: 80px;
+  float: right;
+}
+.connect_footer .code_box .qq{
+  float: left;
   width: 80px;
 }
 .connect_footer .code_box img{

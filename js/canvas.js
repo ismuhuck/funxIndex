@@ -1,10 +1,10 @@
 !function() {
     var imgWidth = 133
     var canvas = document.getElementById('canvas');
-    canvas.width = window.innerWidth - (window.innerWidth / 4)
-    canvas.height = window.innerHeight - (window.innerHeight / 7)
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
     var ctx = canvas.getContext('2d');
-    var rgb = '0';      // 线条颜色值
+    var rgb = '110';      // 线条颜色值
     var extendDis = -150;   // 可超出的画布边界
     var lineDis = 300;    // 连线距离
     // 生成图片
@@ -12,6 +12,7 @@
     var moreDis = 60
     var moreDD = 0
     var lineWidth = 2
+    var imgNum = 22
     // 手机单独处理
     if (isMobile) {
       canvas.width = window.screen.width
@@ -23,9 +24,15 @@
       canvas.style.top = '0px'
       lineDis = 200
       moreDD = 40
+      imgNum = 11
     }
 
     lineDis *= lineDis;
+    window.onresize = function () {
+      canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+    }
+
     function genImage (url) {
       var img = new Image()
       img.src = url
@@ -34,6 +41,14 @@
     for (var i = 1; i <= 11; i ++) {
       imgCollector.push(genImage('./icon/m' + i + '.png'))
     }
+
+    var arr = []
+    for (var j = 1; j <= 11; j ++) {
+      imgCollector.push(genImage('./icon/m' + j + '.png'))
+    }
+    console.log(arr)
+    imgCollector.concat(arr)
+    console.log(imgCollector)
 
     window.onresize = function () {
       canvas.width = window.innerWidth - 200
@@ -62,7 +77,7 @@
     // 添加粒子
     // x，y为粒子坐标，xa, ya为粒子xy轴加速度，max为连线的最大距离
     var dots = [];
-    for (var i = 0; i < 11; i++) {
+    for (var i = 0; i < imgNum; i++) {
       var x = Math.random() * (canvas.width + 2 * extendDis) - extendDis;
       var y = Math.random() * (canvas.height + 2 * extendDis) - extendDis;
       var xa = (Math.random() * 2 - 1) / 1.5;
